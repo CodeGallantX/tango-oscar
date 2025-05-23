@@ -1,12 +1,11 @@
 import Banner from "../components/shared/Banner";
 
-const Contact = () => {
+const GetStarted = () => {
     return (
         <div>
-            <Banner page="contact"/>
-        Contact
+            <Banner page="booking"/>
         </div>
     )
 }
 
-export default Contact;
+export default GetStarted;

@@ -1,10 +1,11 @@
-import Header from "../components/shared/Header";
+import Hero from "../components/home/Hero";
 // import Footer from "../components/shared/Footer";
 
 const Home = () => {
     return (
-        <div>
-        <Header />
+        <div className="bg-black/90">
+        <Hero />
+        {/* <Footer /> */}
         </div>
     )
 }

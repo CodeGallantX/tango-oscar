@@ -7,26 +7,30 @@ const navLinks = [
         path: "/",
     },
     {
-        page: "About",
-        path: "/about",
-    },
-    {
         page: "Membership",
         path: "/membership",
+    },
+    {
+        page: "Services",
+        path: "/services",
         dropdown: [
             {
-                page: "Pricing",
+                page: "Premium",
                 path: "/membership/pricing",
             },
             {
-                page: "Get a Quote",
+                page: "Private Jet",
                 path: "/membership/quotes",
             },
             {
-                page: "Bonuses",
+                page: "VVIP",
                 path: "/membership/customer-bonuses",
             },
         ]
+    },
+    {
+        page: "About",
+        path: "/about",
     },
     {
         page: "Blog",
@@ -38,7 +42,7 @@ const navLinks = [
     },
 ];
 
-const Header = () => {
+const Header = ({moreStyles}) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
 
@@ -54,34 +58,34 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-white shadow-md">
-            <div className="fixed w-full px-24 py-6 flex justify-between items-start">
+        <header className={`bg-black/80 shadow-md text-white ${moreStyles}`}>
+            <div className="fixed w-full px-6 lg:px-24 py-6 flex justify-between items-start z-20 text-white">
                 <div className="flex items-center">
                     <img src="/logo.png" alt="Tango Oscar logo" className="h-56" />
                 </div>
 
                 {/* Desktop Navigation - hidden on mobile */}
-                <nav className="hidden md:block">
+                <nav className="hidden md:block mt-6">
                     <ul className="flex space-x-6">
                         {navLinks.map((link, index) => (
                             <li key={index} className="relative group">
                                 <a 
                                     href={link.path} 
-                                    className="flex items-center text-gray-700 hover:text-amber-600 transition duration-300"
+                                    className="group flex items-center text-white hover:text-bronze transition duration-300"
                                     onClick={(e) => link.dropdown && e.preventDefault()}
                                 >
                                     {link.page}
                                     {link.dropdown && (
-                                        <FiChevronDown className="ml-1" size={14} />
+                                        <FiChevronDown className="ml-1 group-hover:rotate-180 transition-all duration-300 ease-in-out" size={14} />
                                     )}
                                 </a>
                                 {link.dropdown && (
-                                    <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <ul className="absolute left-0 mt-2 w-48 bg-black/70 border-t-2 border-t-bronze shadow-lg shadow-bronze/10 rounded- py-1 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         {link.dropdown.map((item, itemIndex) => (
                                             <li key={itemIndex}>
                                                 <a 
                                                     href={item.path} 
-                                                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-amber-50 hover:text-amber-600"
+                                                    className="flex items-center px-4 py-2 text-white hover:bg-amber-50 hover:text-bronze"
                                                 >
                                                     <FiChevronRight className="mr-2" size={12} />
                                                     {item.page}
@@ -98,7 +102,7 @@ const Header = () => {
                 {/* Mobile Menu Button - visible only on mobile */}
                 <button 
                     onClick={toggleMobileMenu}
-                    className="md:hidden text-gray-700 focus:outline-none"
+                    className="md:hidden text-white focus:outline-none mt-6 z-50"
                     aria-label="Toggle menu"
                 >
                     {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -122,7 +126,7 @@ const Header = () => {
                                     <div>
                                         <button 
                                             onClick={() => toggleDropdown(index)}
-                                            className="w-full flex justify-between items-center py-2 text-gray-700 hover:text-amber-600"
+                                            className="w-full flex justify-between items-center py-2 text-white hover:text-bronze"
                                         >
                                             <span>{link.page}</span>
                                             {activeDropdown === index ? (
@@ -137,7 +141,7 @@ const Header = () => {
                                                     <li key={itemIndex}>
                                                         <a 
                                                             href={item.path} 
-                                                            className="flex items-center py-1.5 text-gray-600 hover:text-amber-600"
+                                                            className="flex items-center py-1.5 text-gray-600 hover:text-bronze"
                                                             onClick={toggleMobileMenu}
                                                         >
                                                             <FiChevronRight className="mr-2" size={12} />
@@ -151,7 +155,7 @@ const Header = () => {
                                 ) : (
                                     <a 
                                         href={link.path} 
-                                        className="block py-2 text-gray-700 hover:text-amber-600"
+                                        className="block py-2 text-white hover:text-bronze"
                                         onClick={toggleMobileMenu}
                                     >
                                         {link.page}
