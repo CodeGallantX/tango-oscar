@@ -63,7 +63,7 @@ const Hero = () => {
     autoplay: true,
     autoplaySpeed: 5000,
     beforeChange: (current, next) => setCurrentSlide(next),
-    arrows: false, // Disable default arrows since we're using custom ones
+    arrows: false,
   };
 
   return (
@@ -72,31 +72,31 @@ const Hero = () => {
       <Slider 
         {...settings} 
         ref={sliderRef}
-        className="absolute inset-0 z-0 h-full w-full"
+        className="absolute inset-0 h-full w-full -z-10"
       >
         {carouselItems.map((item) => (
-          <div key={item.id} className="h-full w-full relative">
-            {/* Dark overlay for text visibility */}
-            <div className="absolute inset-0 bg-black/40 z-10" />
-            {/* Image */}
+          <div key={item.id} className="relative h-screen w-full">
+            {/* Image - moved before overlay */}
             <img 
               src={item.image} 
               alt={item.title}
-              className="h-full w-full object-cover absolute inset-0"
+              className="h-full w-full object-cover"
               onError={(e) => {
                 e.target.onerror = null; 
                 e.target.src = "/placeholder-hero.jpg"
               }}
             />
+            {/* Dark overlay for text visibility */}
+            <div className="absolute inset-10 bg-black/40 z-10" />
           </div>
         ))}
       </Slider>
 
       {/* Header */}
-      <Header className="relative z-30" />
+      <Header className="relative z-40" />
 
       {/* Fixed content on the left */}
-      <div className="absolute left-0 top-0 z-20 flex h-full w-full flex-col justify-center px-4 text-white sm:px-8 md:max-w-2xl lg:max-w-3xl lg:px-16 xl:px-24">
+      <div className="absolute left-0 top-0 z-30 flex h-full w-full flex-col justify-center px-4 text-white sm:px-8 md:max-w-2xl lg:max-w-3xl lg:px-16 xl:px-24">
         <div className="mt-16 md:mt-20 lg:mt-24">
           <h1 className="mb-4 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
             <span className="block">Seamless Luxury,</span>
