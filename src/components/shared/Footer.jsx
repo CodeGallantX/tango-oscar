@@ -2,8 +2,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react
 
 const Footer = () => {
     return (
-        <footer className="bg-black w-full py-12 px-6 md:px-24 text-white">
-            <div className="container mx-auto">
+        <footer className="bg-black w-full py-12 px-6 md:px-24 text-white px-6 md:px-16 lg:px-24">
                 {/* Main Footer Content */}
                 <div className="flex flex-col md:flex-row items-start justify-between gap-10 mb-10">
                     {/* Logo Section */}
@@ -85,7 +84,6 @@ const Footer = () => {
                         <p>24/7 Support: <a href="tel:+1234567890" className="text-white hover:text-bronze">+1 (234) 567-890</a></p>
                         <p>Email: <a href="mailto:info@tangooscar.com" className="text-white hover:text-bronze">info@tangooscar.com</a></p>
                     </div>
-                </div>
             </div>
         </footer>
     )

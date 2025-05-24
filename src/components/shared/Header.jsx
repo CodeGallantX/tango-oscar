@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import { FiMenu, FiX, FiChevronDown, FiChevronUp, FiChevronRight } from 'react-icons/fi';
 
 const navLinks = [
@@ -57,16 +58,18 @@ const Header = ({moreStyles}) => {
         setActiveDropdown(activeDropdown === index ? null : index);
     };
 
+    const navigate = useNavigate();
+
     return (
         <header className={`bg-black/80 shadow-md text-white ${moreStyles}`}>
-            <div className="fixed w-full px-6 lg:px-24 py-6 flex justify-between items-start z-20 text-white">
+            <div className="fixed w-full px-6 md:px-16 lg:px-24 py-6 flex justify-between items-start z-20 text-white">
                 <div className="flex items-center">
-                    <img src="/logo.png" alt="Tango Oscar logo" className="h-56" />
+                    <img src="/logo.png" alt="Tango Oscar logo" className="h-16 md:h-24 lg:h-56" />
                 </div>
 
                 {/* Desktop Navigation - hidden on mobile */}
                 <nav className="hidden md:block mt-6">
-                    <ul className="flex space-x-6">
+                    <ul className="flex flex-row items-center space-x-6">
                         {navLinks.map((link, index) => (
                             <li key={index} className="relative group">
                                 <a 
@@ -96,6 +99,7 @@ const Header = ({moreStyles}) => {
                                 )}
                             </li>
                         ))}
+                    <button onClick={() => {navigate('/get-started')}} className="bg-bronze px-3 py-2 rounded-md ml-4">Get Started</button>
                     </ul>
                 </nav>
 
@@ -116,7 +120,7 @@ const Header = ({moreStyles}) => {
                 } transition-transform duration-300 ease-in-out z-50`}
             >
                 <div className="p-4 border-b">
-                    <img src="/logo.png" alt="Tango Oscar logo" className="h-28" />
+                    <img src="/logo.png" alt="Tango Oscar logo" className="h-14" />
                 </div>
                 <nav className="p-4">
                     <ul className="space-y-2">

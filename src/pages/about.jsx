@@ -1,5 +1,7 @@
 import Banner from "../components/shared/Banner";
-import LetterImage from "../components/about/LetterImage";
+import Mission from "../components/about/Mission";
+import Assurance from "../components/about/Assurance";
+import Global from "../components/about/Global";
 import Footer from "../components/shared/Footer";
 
 const About = () => {
@@ -7,7 +9,9 @@ const About = () => {
         <div>
             <Banner page="about"/>
             {/* <LetterImage src="/hero1.jpg" alt="Description" letter="T" size="300px" /> */}
-            <LetterImage imageUrl="/hero1.jpg"/>
+            <Mission />
+            <Assurance />
+            <Global />
             <Footer />
         </div>
     )

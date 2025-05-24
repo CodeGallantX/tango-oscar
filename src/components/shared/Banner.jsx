@@ -4,10 +4,12 @@ const Banner = ({ page, backgroundImage, subtitle }) => {
   // Define page titles or use the prop directly
   const pageTitles = {
     home: "Welcome to Our Luxury Services",
-    about: "About Our Company",
+    about: "About",
     services: "Our Exclusive Services",
-    contact: "Contact Us",
+    contact: "Get in Touch",
     booking: "Book Now",
+    membership: "Membership",
+    blog: "Blog"
     // Add more pages as needed
   };
 

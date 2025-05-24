@@ -38,7 +38,7 @@ const Hero = () => {
       className="rounded-full bg-white/30 p-2 backdrop-blur-sm transition-all hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-white/50"
       aria-label="Next slide"
     >
-      <FiChevronRight className="h-5 w-5" />
+      <FiChevronRight className="h-5 w-5 text-white" />
     </button>
   );
 
@@ -48,7 +48,7 @@ const Hero = () => {
       className="rounded-full bg-white/30 p-2 backdrop-blur-sm transition-all hover:bg-white/50 focus:outline-none focus:ring-2 focus:ring-white/50"
       aria-label="Previous slide"
     >
-      <FiChevronLeft className="h-5 w-5" />
+      <FiChevronLeft className="h-5 w-5 text-white" />
     </button>
   );
 
@@ -68,26 +68,22 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen overflow-hidden">
-      {/* Background Slider */}
       <Slider 
         {...settings} 
         ref={sliderRef}
-        className="absolute inset-0 h-full w-full -z-10"
+        className="absolute inset-0 h-full w-full z-0"
       >
         {carouselItems.map((item) => (
           <div key={item.id} className="relative h-screen w-full">
-            {/* Image - moved before overlay */}
             <img 
               src={item.image} 
               alt={item.title}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover brightness-50"
               onError={(e) => {
                 e.target.onerror = null; 
-                e.target.src = "/placeholder-hero.jpg"
+                e.target.src = "/hero2.jpg"
               }}
             />
-            {/* Dark overlay for text visibility */}
-            <div className="absolute inset-10 bg-black/40 z-10" />
           </div>
         ))}
       </Slider>
@@ -96,7 +92,7 @@ const Hero = () => {
       <Header className="relative z-40" />
 
       {/* Fixed content on the left */}
-      <div className="absolute left-0 top-0 z-30 flex h-full w-full flex-col justify-center px-4 text-white sm:px-8 md:max-w-2xl lg:max-w-3xl lg:px-16 xl:px-24">
+      <div className="absolute left-0 top-0 z-20 flex h-full w-full flex-col justify-center px-4 text-white sm:px-8 md:max-w-2xl lg:max-w-3xl lg:px-16 xl:px-24">
         <div className="mt-16 md:mt-20 lg:mt-24">
           <h1 className="mb-4 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
             <span className="block">Seamless Luxury,</span>
@@ -120,7 +116,7 @@ const Hero = () => {
 
       {/* Slide-specific content on the right with navigation controls */}
       <div className="absolute bottom-8 right-0 z-20 w-full px-4 sm:bottom-12 sm:px-8 md:bottom-16 md:max-w-md lg:bottom-20 lg:max-w-xl lg:px-16 xl:px-24">
-        <div className="max-w-xl bg-black/40 p-6 backdrop-blur-sm rounded-lg text-white">
+        <div className="max-w-xl bg-black/30 p-6 backdrop-blur-sm rounded-lg text-white"> {/* Reduced opacity from /40 to /30 */}
           <h2 className="mb-2 text-xl font-bold sm:text-2xl md:text-3xl text-bronze">
             {carouselItems[currentSlide].title}
           </h2>
