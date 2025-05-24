@@ -23,30 +23,24 @@ const Banner = ({ page, backgroundImage, subtitle }) => {
         backgroundPosition: 'center'
       } : {}}
     >
-      {/* Background overlay - darker when there's a background image */}
       <div className={`absolute inset-0 ${backgroundImage ? 'bg-black/60' : 'bg-black/50'} z-0`} />
       
-      {/* Header positioned absolutely at the top */}
       <Header moreStyles="absolute top-0 left-0 right-0 z-20" />
       
-      {/* Content container with proper z-index */}
       <div className="w-full relative z-20 mx-auto px-4 sm:px-6 lg:px-8 mt-20">
         <div className="flex flex-col items-center justify-center text-center">
-          {/* Main title with responsive sizing */}
           <h1 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl mb-2 md:mb-4">
             {title}
           </h1>
           
-          {/* Subtitle if provided */}
           {subtitle && (
             <p className="text-lg text-gray-200 max-w-2xl mx-auto mb-4 md:mb-6">
               {subtitle}
             </p>
           )}
           
-          {/* Optional breadcrumb navigation */}
           <div className="flex items-center space-x-2 text-sm text-gray-300 md:text-base">
-            <span className="hover:text-bronze cursor-pointer transition">Home</span>
+            <a href="/" className="hover:text-bronze cursor-pointer transition">Home</a>
             <span>/</span>
             <span className="text-bronze capitalize">{page}</span>
           </div>

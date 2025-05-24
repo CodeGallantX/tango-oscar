@@ -80,7 +80,7 @@ const Header = ({moreStyles}) => {
                                     )}
                                 </a>
                                 {link.dropdown && (
-                                    <ul className="absolute left-0 mt-2 w-48 bg-black/70 border-t-2 border-t-bronze shadow-lg shadow-bronze/10 rounded- py-1 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <ul className="absolute left-0 mt-2 w-48 bg-black/70 border-t-2 border-t-bronze shadow-lg shadow-bronze/10 rounded- py-1 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         {link.dropdown.map((item, itemIndex) => (
                                             <li key={itemIndex}>
                                                 <a 
@@ -111,12 +111,12 @@ const Header = ({moreStyles}) => {
 
             {/* Mobile Sidebar - visible only on mobile */}
             <div 
-                className={`fixed inset-y-0 left-0 w-64 bg-white shadow-lg transform md:hidden ${
+                className={`fixed inset-y-0 left-0 w-64 bg-black/60 backdrop-blur-md border-r  border-r-bronze shadow-lg transform md:hidden ${
                     isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
                 } transition-transform duration-300 ease-in-out z-50`}
             >
                 <div className="p-4 border-b">
-                    <img src="/logo.png" alt="Tango Oscar logo" className="h-8" />
+                    <img src="/logo.png" alt="Tango Oscar logo" className="h-28" />
                 </div>
                 <nav className="p-4">
                     <ul className="space-y-2">
@@ -170,7 +170,7 @@ const Header = ({moreStyles}) => {
             {/* Overlay for mobile menu - visible only when menu is open on mobile */}
             {isMobileMenuOpen && (
                 <div 
-                    className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+                    className="fixed inset-0 bg-black/50 blur-lg z-40 md:hidden"
                     onClick={toggleMobileMenu}
                 />
             )}
