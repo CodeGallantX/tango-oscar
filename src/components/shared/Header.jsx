@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { FiMenu, FiX, FiChevronDown, FiChevronUp, FiChevronRight } from 'react-icons/fi';
 
@@ -46,6 +46,20 @@ const navLinks = [
 const Header = ({moreStyles}) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -61,14 +75,18 @@ const Header = ({moreStyles}) => {
     const navigate = useNavigate();
 
     return (
-        <header className={`bg-black/80 shadow-md text-white ${moreStyles}`}>
-            <div className="fixed w-full px-6 md:px-16 lg:px-24 py-6 flex justify-between items-start z-20 text-white">
+        <header className={`fixed w-full z-20 transition-all duration-300 ${isScrolled ? 'bg-black shadow-md py-2' : 'bg-black/80 py-6'}`}>
+            <div className={`px-6 md:px-16 lg:px-24 flex justify-between items-center transition-all duration-300 ${isScrolled ? 'py-2' : 'py-0'}`}>
                 <div className="flex items-center">
-                    <img src="/logo.png" alt="Tango Oscar logo" className="h-16 md:h-24 lg:h-56" />
+                    <img 
+                        src="/logo.png" 
+                        alt="Tango Oscar logo" 
+                        className={`transition-all duration-300 ${isScrolled ? 'h-12 md:h-16 lg:h-20' : 'h-16 md:h-24 lg:h-28'}`} 
+                    />
                 </div>
 
                 {/* Desktop Navigation - hidden on mobile */}
-                <nav className="hidden md:block mt-6">
+                <nav className="hidden md:block">
                     <ul className="flex flex-row items-center space-x-6">
                         {navLinks.map((link, index) => (
                             <li key={index} className="relative group">
@@ -106,7 +124,7 @@ const Header = ({moreStyles}) => {
                 {/* Mobile Menu Button - visible only on mobile */}
                 <button 
                     onClick={toggleMobileMenu}
-                    className="md:hidden text-white focus:outline-none mt-6 z-50"
+                    className="md:hidden text-white focus:outline-none z-50"
                     aria-label="Toggle menu"
                 >
                     {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -115,12 +133,12 @@ const Header = ({moreStyles}) => {
 
             {/* Mobile Sidebar - visible only on mobile */}
             <div 
-                className={`fixed inset-y-0 left-0 w-64 bg-black/60 backdrop-blur-md border-r  border-r-bronze shadow-lg transform md:hidden ${
+                className={`fixed inset-y-0 left-0 w-64 bg-black/60 backdrop-blur-md border-r border-r-bronze shadow-lg transform md:hidden ${
                     isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
                 } transition-transform duration-300 ease-in-out z-50`}
             >
                 <div className="p-4 border-b">
-                    <img src="/logo.png" alt="Tango Oscar logo" className="h-14" />
+                    <img src="/logo.png" alt="Tango Oscar logo" className={`h-14 transition-all duration-300 ${isScrolled ? 'h-12' : 'h-14'}`} />
                 </div>
                 <nav className="p-4">
                     <ul className="space-y-2">
