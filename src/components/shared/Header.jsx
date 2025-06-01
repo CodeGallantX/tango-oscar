@@ -17,15 +17,15 @@ const navLinks = [
         dropdown: [
             {
                 page: "Premium",
-                path: "/membership/pricing",
+                path: "/services/premium",
             },
             {
                 page: "Private Jet",
-                path: "/membership/quotes",
+                path: "/services/private-jet",
             },
             {
-                page: "VVIP",
-                path: "/membership/customer-bonuses",
+                page: "Luxury Chauffeur",
+                path: "/services/luxury-chauffeur",
             },
         ]
     },
@@ -75,7 +75,7 @@ const Header = ({moreStyles}) => {
     const navigate = useNavigate();
 
     return (
-        <header className={`fixed w-full z-30 top-0 transition-all duration-300 ${isScrolled ? 'bg-black shadow-md py-2' : 'bg-none py-6'}`}>
+        <header className={`fixed w-full z-30 top-0 transition-all duration-300 ${moreStyles} ${isScrolled ? 'bg-black shadow-md py-2' : 'bg-none py-6'}`}>
             <div className={`px-6 md:px-16 lg:px-24 flex justify-between items-center transition-all duration-300 ${isScrolled ? 'py-2' : 'py-0'}`}>
                 <div className="flex items-center">
                     <img 
