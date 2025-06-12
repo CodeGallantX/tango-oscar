@@ -3,14 +3,15 @@ import Header from "./Header";
 const Banner = ({ page, backgroundImage, subtitle }) => {
   // Define page titles or use the prop directly
   const pageTitles = {
-    home: "Welcome to Our Luxury Services",
     about: "About",
     services: "Our Exclusive Services",
     contact: "Get in Touch",
     booking: "Book Now",
     membership: "Membership",
-    blog: "Blog"
-    // Add more pages as needed
+    blog: "Blog",
+    'luxury chauffeur': "Luxury Chauffeur",
+    'VVIP security': "VVIP Security",
+    'private jet': "Private Jet Charter",
   };
 
   // Get the title based on the page prop or use a default

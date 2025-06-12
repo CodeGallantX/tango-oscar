@@ -6,7 +6,7 @@ const App = () => {
     return (
         <section>
             <Header />
-            <Banner page="luxury chauffeur"/>
+            <Banner page="VVIP security"/>
             <Footer />
         </section>
     )

@@ -2,7 +2,7 @@ import {Routes, Route} from "react-router-dom";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Contact from "./pages/contact";
-import Premium from "./pages/services/premium";
+import VVIPSecurity from "./pages/services/vvip-security";
 import LuxuryChauffeur from "./pages/services/luxury-chauffeur";
 import PrivateJet from "./pages/services/private-jet";
 import Blog from "./pages/blog";
@@ -15,7 +15,7 @@ const App = () => {
       <Route path="/" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/get-started" element={<GetStarted/>}/>
-      <Route path="/services/premium" element={<Premium/>}/>
+      <Route path="/services/vvip-security" element={<VVIPSecurity/>}/>
       <Route path="/services/private-jet" element={<PrivateJet/>}/>
       <Route path="/services/luxury-chauffeur" element={<LuxuryChauffeur/>}/>
       <Route path="/contact" element={<Contact/>}/>

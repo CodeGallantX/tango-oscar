@@ -1,12 +1,12 @@
 const blinds = [
     {
-        imgUrl: "/hero3.jpg",
+        imgUrl: "/blind1.jpg",
     },
     {
-        imgUrl: "/hero1.jpg",
+        imgUrl: "/blind2.jpg",
     },
     {
-        imgUrl: "/hero2.jpg",
+        imgUrl: "/blind3.jpg",
     },
 ]
 

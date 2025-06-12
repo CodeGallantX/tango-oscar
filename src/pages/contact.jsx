@@ -4,17 +4,18 @@ import Banner from "../components/shared/Banner";
 import Footer from "../components/shared/Footer";
 
 const Contact = () => {
-    // const [name, setName] = useState('');
-    // const [email, setEmail] = useState('');
-    // const [phoneNumber, setPhoneNumber] = useState('');
-    // const [message, setMessage] = useState('');
-    // const [formData, setFormData] = useState('');
-
+    // const [formData, setFormData] = useState(
+    // formData = {
+    //     name: "",
+    //     email: "",
+    //     phoneNumber: "",
+    //     message: "",
+    // });
 
     return (
         <div>
             <Banner page="contact" />
-            <section className="flex flex-row items-start justify-between space-x-10 py-20 px-6 md:px-16 lg:px-24">
+            <section className="flex flex-col md:flex-row items-start justify-between space-x-0 space-y-6 md:space-x-10 md:space-y-0 py-20 px-6 md:px-16 lg:px-24">
                 <div className="flex flex-col items-start justify-start space-y-4">
                     <h2 className="font-bold text-5xl">Contact Us</h2>
                     <p>Feel free to contact us and ask about our services and your bookings.</p>
@@ -29,7 +30,7 @@ const Contact = () => {
                         </a>
                     </div>
                 </div>
-                <form className="w-2/5 flex flex-col items-start justify-center space-y-4">
+                <form className="w-full md:w-2/5 flex flex-col items-start justify-center space-y-4">
                     <input 
                         type="text" 
                         name="name" 

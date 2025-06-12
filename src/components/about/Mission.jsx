@@ -13,17 +13,18 @@ const Mission = () => {
                         maxWidth: "450px",
                         maxHeight: "350px",
                         overflow: "hidden",
-                        transform: "skewX(-10deg)",
+                        transform: "skewX(-8deg)",
                         borderRadius: "50px"
                     }}
                 >
                     <img
-                        src="/hero3.jpg"
+                        src="/office-man.jpg"
                         alt="Mission - Tango Oscar"
                         style={{
                             width: "100%",
                             height: "100%",
                             objectFit: "cover",
+                            objectPosition: "bottom",
                         }}
                     />
                 </div>
