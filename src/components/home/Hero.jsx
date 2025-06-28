@@ -115,7 +115,7 @@ const Hero = () => {
       </div>
 
       {/* Slide-specific content on the right with navigation controls */}
-      <div className="absolute bottom-8 right-0 z-20 w-full px-4 sm:bottom-12 sm:px-8 md:bottom-16 md:max-w-md lg:bottom-20 lg:max-w-xl lg:px-16 xl:px-24">
+      <div className="absolute bottom-4 right-0 z-20 w-full px-4 sm:bottom-12 sm:px-8 md:bottom-16 md:max-w-md lg:bottom-20 lg:max-w-xl lg:px-16 xl:px-24">
         <div className="max-w-xl bg-black/30 p-6 backdrop-blur-sm rounded-lg text-white"> {/* Reduced opacity from /40 to /30 */}
           <h2 className="mb-2 text-xl font-bold sm:text-2xl md:text-3xl text-bronze">
             {carouselItems[currentSlide].title}
