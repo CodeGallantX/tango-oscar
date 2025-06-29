@@ -8,6 +8,8 @@ import PrivateJet from "./pages/services/private-jet";
 import Blog from "./pages/blog";
 import Membership from "./pages/membership";
 import GetStarted from "./pages/get-started";
+import Login from "./pages/auth/login";
+import Signup from "./pages/auth/signup";
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/blog" element={<Blog/>}/>
       <Route path="/membership" element={<Membership/>}/>
+      <Route path="/auth/signup" element={<Signup/>}/>
+      <Route path="/auth/login" element={<Login/>}/>
     </Routes>
   )
 }
