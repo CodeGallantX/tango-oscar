@@ -1,9 +1,11 @@
-const Login = () => {
-    return (
-        <section>
-        </section>
-    )
+import LoginForm from './components/LoginForm'
+
+function App() {
+  return (
+    <div className="App">
+      <LoginForm />
+    </div>
+  )
 }
 
-
-export default Login;
+export default App

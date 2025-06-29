@@ -1,9 +1,11 @@
-const SignUp = () => {
-    return (
-        <section>
-        </section>
-    )
+import SignUpForm from '../../components/auth/SignUpForm'
+
+function App() {
+  return (
+    <div className="App">
+      <SignUpForm />
+    </div>
+  )
 }
 
-
-export default SignUp;
+export default App
