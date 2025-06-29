@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Eye, EyeOff } from 'react-feather'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import authImage from '../assets/auth-image.jpg' // Add your image
 
 export default function LoginForm() {
@@ -105,9 +105,9 @@ export default function LoginForm() {
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
-                    <EyeOff className="h-5 w-5 text-gray-400" />
+                    <FaEyeSlash className="h-5 w-5 text-gray-400" />
                   ) : (
-                    <Eye className="h-5 w-5 text-gray-400" />
+                    <FaEye className="h-5 w-5 text-gray-400" />
                   )}
                 </button>
               </div>
