@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
-import authImage from '../assets/auth-image.jpg' // Use the same image as login
+// import authImage from '../assets/auth-image.jpg' // Use the same image as login
 
 export default function SignUpForm() {
   const [formData, setFormData] = useState({
@@ -238,11 +238,11 @@ export default function SignUpForm() {
               <p className="text-xl text-gray-200">Begin your journey with us today</p>
             </div>
           </div>
-          <img
+          {/* <img
             src={authImage}
             alt="Authentication"
             className="w-full h-full object-cover opacity-80"
-          />
+          /> */}
         </div>
       </div>
     </div>
