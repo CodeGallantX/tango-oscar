@@ -116,7 +116,7 @@ const Header = ({moreStyles}) => {
                                 )}
                             </li>
                         ))}
-                    <button onClick={() => {navigate('/get-started')}} className="bg-bronze px-3 py-2 rounded-md ml-4">Get Started</button>
+                    <button onClick={() => {navigate('/auth/signup')}} className="bg-bronze px-3 py-2 rounded-md ml-4">Get Started</button>
                     </ul>
                 </nav>
 
