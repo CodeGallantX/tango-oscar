@@ -81,7 +81,7 @@ const Header = ({moreStyles}) => {
                     <img 
                         src="/logo.png" 
                         alt="Tango Oscar logo" 
-                        className={`transition-all duration-300 ${isScrolled ? 'h-12 md:h-16 lg:h-20' : 'h-16 md:h-24 lg:h-28'}`} 
+                        className={`transition-all duration-300 ${isScrolled ? 'h-12 md:h-16 lg:h-20' : 'h-24 md:h-28 lg:h-36'}`} 
                     />
                 </div>
 
@@ -137,7 +137,7 @@ const Header = ({moreStyles}) => {
                 } transition-transform duration-300 ease-in-out z-50`}
             >
                 <div className="p-4 border-b border-b-zinc-600">
-                    <img src="/logo.png" alt="Tango Oscar logo" className={`h-14 transition-all duration-300 ${isScrolled ? 'h-12' : 'h-14'}`} />
+                    <img src="/logo.png" alt="Tango Oscar logo" className={`h-14 transition-all duration-300 ${isScrolled ? 'h-12' : 'h-24'}`} />
                 </div>
                 <nav className="p-4">
                     <ul className="space-y-2">
