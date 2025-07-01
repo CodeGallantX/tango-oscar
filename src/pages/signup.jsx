@@ -1,14 +1,12 @@
-import Header from "../components/shared/Header";
 
 const Signup = () => {
     return (
         <div className="min-h-screen bg-gray-50">
-            <Header />
             
             {/* Main Auth Container */}
             <div className="flex min-h-[70vh]">
                 {/* Side Illustration - Desktop Only */}
-                <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-bronze to-amber-700 items-center justify-center p-12">
+                <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-bronze to-amber items-center justify-center p-12">
                     <div className="text-center text-white">
                         <div className="mb-8">
                             <svg className="w-24 h-24 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
