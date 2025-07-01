@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
-// import authImage from '../assets/auth-image.jpg' // Add your image
 
 export default function LoginForm() {
   const [formData, setFormData] = useState({
