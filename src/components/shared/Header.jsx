@@ -16,16 +16,16 @@ const navLinks = [
         path: "/services",
         dropdown: [
             {
-                page: "Premium",
-                path: "/services/premium",
+                page: "VVIP Concierge",
+                path: "/services/vvip-concierge",
             },
             {
-                page: "Private Jet",
-                path: "/services/private-jet",
+                page: "VVIP Security",
+                path: "/services/vvip-security",
             },
             {
-                page: "Luxury Chauffeur",
-                path: "/services/luxury-chauffeur",
+                page: "Private Jet Charter",
+                path: "/services/private-jet-charter",
             },
         ]
     },
